@@ -34,7 +34,7 @@ window.onload = function () {
         conn = new WebSocket("ws://" + document.location.host + "/ws");
         conn.onclose = function (evt) {
             var item = document.createElement("div");
-            item.innerHTML = "<b>Connection closed.</b>";
+            item.innerHTML = "<b>CONNECTION TERMINATED</b>";
             appendLog(item);
         };
         conn.onmessage = function (evt) {
