@@ -63,11 +63,11 @@ body {
     margin: 0;
     width: 100%;
     height: 100%;
-    background: gray;
+    background: Red;
 }
 
 #log {
-    background: white;
+    background: Red;
     margin: 0;
     padding: 0.5em 0.5em 0.5em 0.5em;
     position: absolute;
@@ -93,7 +93,7 @@ body {
 <body>
 <div id="log"></div>
 <form id="form">
-    <input type="submit" value="Send" />
+    <input type="submit" value="Post" />
     <input type="text" id="msg" size="64" autofocus />
 </form>
 </body>
