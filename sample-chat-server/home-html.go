@@ -63,7 +63,7 @@ body {
     margin: 0;
     width: 100%;
     height: 100%;
-    background: gray;
+    background: navy;
 }
 
 #log {
@@ -93,7 +93,7 @@ body {
 <body>
 <div id="log"></div>
 <form id="form">
-    <input type="submit" value="Send" />
+    <input type="submit" value="Post" />
     <input type="text" id="msg" size="64" autofocus />
 </form>
 </body>
