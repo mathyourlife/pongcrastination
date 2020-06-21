@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	log.Println("Ready to PONGCRASTINATE?!")
+	log.Println("Are You Ready to PONGCRASTINATE!!!")
 }
