@@ -18,16 +18,16 @@ window.onload = function () {
         }
     }
 
-    document.getElementById("form").onsubmit = function () {
-        if (!conn) {
-            return false;
-        }
-        if (!msg.value) {
-            return false;
-        }
-        conn.send(msg.value);
-        msg.value = "";
-        return false;
+    document.getElementById("sendMsg").onclick = function () {
+      if (!conn) {
+          return false;
+      }
+      if (!msg.value) {
+          return false;
+      }
+      conn.send(msg.value);
+      msg.value = "";
+      return false;
     };
 
     if (window["WebSocket"]) {
@@ -66,16 +66,20 @@ body {
     background: Red;
 }
 
+#container {
+    margin: 10px;
+}
+
 #log {
     background: Red;
-    margin: 0;
+    margin: 10px;
     padding: 0.5em 0.5em 0.5em 0.5em;
-    position: absolute;
     top: 0.5em;
     left: 0.5em;
     right: 0.5em;
     bottom: 3em;
     overflow: auto;
+    height: 40em;
 }
 
 #form {
@@ -91,11 +95,13 @@ body {
 </style>
 </head>
 <body>
-<div id="log"></div>
-<form id="form">
-    <input type="submit" value="Post" />
+<div id="container">
+  <div id="log"></div>
+  <div>
+    <button id="sendMsg" onclick="sendMsg()">Post</button>
     <input type="text" id="msg" size="64" autofocus />
-</form>
+  </div>
+</div>
 </body>
 </html>
 `
