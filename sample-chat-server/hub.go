@@ -34,6 +34,9 @@ func (h *Hub) run() {
 		select {
 		case client := <-h.register:
 			h.clients[client] = true
+			go func() {
+				h.broadcast <- []byte("new client has conected")
+			}()
 		case client := <-h.unregister:
 			if _, ok := h.clients[client]; ok {
 				delete(h.clients, client)

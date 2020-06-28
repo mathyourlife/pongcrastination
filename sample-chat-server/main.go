@@ -25,7 +25,6 @@ func serveHome(w http.ResponseWriter, r *http.Request) {
 	}
 	log.Println("home")
 	fmt.Fprintf(w, homePage)
-	// http.ServeFile(w, r, "home.html")
 }
 
 func main() {
@@ -36,6 +35,7 @@ func main() {
 	http.HandleFunc("/ws", func(w http.ResponseWriter, r *http.Request) {
 		serveWs(hub, w, r)
 	})
+	log.Printf("starting the server at %s", *addr)
 	err := http.ListenAndServe(*addr, nil)
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
